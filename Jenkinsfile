@@ -10,19 +10,19 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                sh 'python3 app.py'
+                bat 'python app.py'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t devops-practical-3 .'
+                bat 'docker build -t devops-practical-3 .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run --rm devops-practical-3'
+                bat 'docker run --rm devops-practical-3'
             }
         }
     }
